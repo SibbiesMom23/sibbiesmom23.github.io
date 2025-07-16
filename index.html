@@ -1,61 +1,119 @@
-
-<h1>Hello from my Linux terminal!</h>
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Stacie Smith | Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stacie Smith Portfolio</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: #f0f0f0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fdfdfd;
       color: #333;
-      padding: 40px;
+      line-height: 1.6;
     }
-    h1 {
-      color: #1e90ff;
+
+    header {
+      background-color: #24292e;
+      color: white;
+      padding: 2rem;
+      text-align: center;
     }
+
+    section {
+      padding: 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    h1, h2, h3 {
+      margin-bottom: 1rem;
+    }
+
     .project {
-      margin-top: 20px;
+      background-color: #fff;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .project:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    }
+
+    .project a {
+      display: inline-block;
+      margin-top: 0.5rem;
+      color: #0366d6;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .project a:hover {
+      text-decoration: underline;
+    }
+
+    .toggle-btn {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      padding: 0.5rem 1rem;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    @media screen and (max-width: 600px) {
+      .project {
+        padding: 1rem;
+      }
     }
   </style>
 </head>
 <body>
-  <h1>👩‍💻 Stacie Smith</h1>
-  <p>Welcome to my portfolio. Here are a few of my favorite projects:</p>
+  <button class="toggle-btn" onclick="toggleTheme()">🌓 Toggle Theme</button>
+  <header>
+    <h1>Stacie Smith</h1>
+    <p>Cybersecurity Learner | Terminal Tinkerer | Portfolio</p>
+  </header>
 
-  <div class="project">
-    <h2>🔐 Cyber Threat Detection Lab</h2>
-    <p>A lab built with Python and Splunk that identifies and logs suspicious traffic using Wireshark packet analysis.</p>
-  </div>
+  <section id="projects">
+    <h2>Projects</h2>
 
-  <div class="project">
-    <h2>📦 SIEM Mini Lab (ELK Stack)</h2>
-    <p>Built a custom SIEM using Elasticsearch, Logstash, and Kibana to monitor simulated network traffic and logs.</p>
-  </div>
+    <div class="project">
+      <h3>📁 Hello Python Script</h3>
+      <p>A beginner-friendly Python script that greets the user by name.</p>
+      <p><strong>Tech used:</strong> Python</p>
+      <a href="https://github.com/SibbiesMom23/stacie-smith.github.io/blob/main/hello.py" target="_blank">View Code</a>
+    </div>
 
-  <div class="project">
-    <h2>🌐 Personal Blog (Coming Soon)</h2>
-    <p>Hosted via GitHub Pages with posts on cybersecurity and Linux tricks.</p>
-  </div>
+    <div class="project">
+      <h3>📂 File Sorter Bash Script</h3>
+      <p>Organizes files into folders based on file extension using bash scripting.</p>
+      <p><strong>Tech used:</strong> Bash</p>
+      <a href="https://github.com/SibbiesMom23/stacie-smith.github.io/blob/main/sort_files.sh" target="_blank">View Code</a>
+    </div>
+
+  </section>
+
+  <script>
+    function toggleTheme() {
+      const body = document.body;
+      const currentBg = getComputedStyle(body).backgroundColor;
+      if (currentBg === 'rgb(253, 253, 253)') {
+        body.style.backgroundColor = '#1e1e1e';
+        body.style.color = '#ddd';
+      } else {
+        body.style.backgroundColor = '#fdfdfd';
+        body.style.color = '#333';
+      }
+    }
+  </script>
 </body>
 </html>
-<section id="projects">
-  <h2>Projects</h2>
-
-  <div class="project">
-    <h3>📁 Hello Python Script</h3>
-    <p>A beginner-friendly Python script that greets the user by name.</p>
-    <p><strong>Tech used:</strong> Python</p>
-    <a href="https://github.com/SibbiesMom23/stacie-smith.github.io/blob/main/hello.py" target="_blank">View Code</a>
-  </div>
-
-  <div class="project">
-    <h3>📂 File Sorter Bash Script</h3>
-    <p>Organizes files into folders based on file extension using bash scripting.</p>
-    <p><strong>Tech used:</strong> Bash</p>
-    <a href="https://github.com/SibbiesMom23/stacie-smith.github.io/blob/main/sort_files.sh" target="_blank">View Code</a>
-  </div>
-
-  <!-- Add more projects here -->
-</section>
