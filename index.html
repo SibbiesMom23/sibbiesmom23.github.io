@@ -2,200 +2,59 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Stacie Smith Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Social Media Post Scheduler - Portfolio</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap');
-
+    /* ======= CSS styles for sparkle girly theme ======= */
     body {
-      font-family: 'Quicksand', sans-serif;
+      background: #fff0f6;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      color: #5a1054;
       margin: 0;
-      padding: 0;
-      background-color: #fdfdfd;
-      color: #333;
-      line-height: 1.6;
-      position: relative;
-      overflow-x: hidden;
-    }
-
-    header {
-      background-color: #24292e;
-      color: white;
       padding: 2rem;
+      display: flex;
+      justify-content: center;
+    }
+    .social-scheduler {
+      background: linear-gradient(135deg, #f8c8dc, #fceaff);
+      padding: 2rem;
+      border-radius: 15px;
+      box-shadow: 0 0 15px #f9a8d4;
+      max-width: 700px;
       text-align: center;
       position: relative;
-      z-index: 2;
-    }
-
-    section {
-      padding: 2rem;
-      max-width: 1000px;
-      margin: auto;
-      position: relative;
-      z-index: 2;
-    }
-
-    h1, h2, h3 {
-      margin-bottom: 1rem;
-    }
-
-    .project {
-      background-color: #fff;
-      padding: 1.5rem;
-      margin-bottom: 1.5rem;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .project:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-    }
-
-    .project a {
-      display: inline-block;
-      margin-top: 0.5rem;
-      color: #0366d6;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .project a:hover {
-      text-decoration: underline;
-    }
-
-    .toggle-btn {
-      position: fixed;
-      top: 1rem;
-      right: 1rem;
-      padding: 0.5rem 1rem;
-      background-color: #333;
-      color: #fff;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      z-index: 3;
-    }
-
-    @media screen and (max-width: 600px) {
-      .project {
-        padding: 1rem;
-      }
-    }
-
-    /* Sparkle Background */
-    .sparkle {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      background: transparent;
       overflow: hidden;
+    }
+    .social-scheduler::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, #fceaff 10%, transparent 70%);
+      animation: sparkle 3s linear infinite;
+      pointer-events: none;
+      opacity: 0.3;
+      z-index: 0;
+    }
+    @keyframes sparkle {
+      0% { transform: rotate(0deg) translateX(0); }
+      100% { transform: rotate(360deg) translateX(10px); }
+    }
+    .social-scheduler h2 {
+      color: #d6336c;
+      font-weight: bold;
+      margin-bottom: 1rem;
+      position: relative;
       z-index: 1;
     }
-
-    .sparkle span {
-      position: absolute;
-      display: block;
-      width: 5px;
-      height: 5px;
-      background: #ffc0cb;
-      border-radius: 50%;
-      animation: sparkle 4s linear infinite;
+    .social-scheduler p {
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto 1.5rem;
+      position: relative;
+      z-index: 1;
     }
+    .social-scheduler .buttons
 
-    @keyframes sparkle {
-      0% {
-        transform: translateY(0) scale(1);
-        opacity: 1;
-      }
-      100% {
-        transform: translateY(100vh) scale(0.2);
-        opacity: 0;
-      }
-    }
-  </style>
-</head>
-<body>
-  <div class="sparkle" id="sparkle-container"></div>
-  <button class="toggle-btn" onclick="toggleTheme()">🌓 Toggle Theme</button>
-  <header>
-    <h1>Stacie Smith</h1>
-    <p>Cybersecurity Learner | Terminal Tinkerer | Portfolio</p>
-  </header>
-
-  <section id="projects">
-    <h2>Projects</h2>
-
-    <div class="project">
-      <h3>📁 Hello Python Script</h3>
-      <p>A beginner-friendly Python script that greets the user by name.</p>
-      <p><strong>Tech used:</strong> Python</p>
-      <a href="https://github.com/SibbiesMom23/stacie-smith.github.io/blob/main/hello.py" target="_blank">View Code</a>
-    </div>
-
-    <div class="project">
-      <h3>📂 File Sorter Bash Script</h3>
-      <p>Organizes files into folders based on file extension using bash scripting.</p>
-      <p><strong>Tech used:</strong> Bash</p>
-      <a href="https://github.com/SibbiesMom23/stacie-smith.github.io/blob/main/sort_files.sh" target="_blank">View Code</a>
-    </div>
-
-<div class="project">
-  <h3>📝 Log File Analyzer</h3>
-  <p>A Python script that scans log files for errors, warnings, and failures, then outputs a summary and filtered results.</p>
-  <p><strong>Tech used:</strong> Python</p>
-  <a href="https://github.com/SibbiesMom23/stacie-smith.github.io/blob/main/log_analyzer.py" target="_blank">View Code</a>
-</div>
-
-<div class="project">
-  <h3>🛡️ Basic Firewall Rules Script</h3>
-  <p>A Bash script that sets up fundamental iptables firewall rules to secure a Linux server by allowing essential traffic and blocking others.</p>
-  <p><strong>Tech used:</strong> Bash, iptables</p>
-  <a href="https://github.com/SibbiesMom23/stacie-smith.github.io/blob/main/basic_firewall.sh" target="_blank">View Code</a>
-</div>
-
-<div class="project">
-  <h3>🔐 Simple Caesar Cipher Tool</h3>
-  <p>A Python command-line app that encrypts and decrypts messages using the Caesar cipher method, demonstrating basic cryptography concepts.</p>
-  <p><strong>Tech used:</strong> Python</p>
-  <a href="https://github.com/SibbiesMom23/stacie-smith.github.io/blob/main/crypto_tool.py" target="_blank">View Code</a>
-</div>
-
-<div class="project">
-  <h3>🔐 Brute Force Password Demo</h3>
-  <p>A Python script demonstrating a basic brute force attack against a mock login system, illustrating authentication vulnerabilities and password guessing.</p>
-  <p><strong>Tech used:</strong> Python</p>
-  <a href="https://github.com/SibbiesMom23/stacie-smith.github.io/blob/main/brute_force_demo.py" target="_blank">View Code</a>
-</div>
-
-  </section>
-
-  <script>
-    function toggleTheme() {
-      const body = document.body;
-      const currentBg = getComputedStyle(body).backgroundColor;
-      if (currentBg === 'rgb(253, 253, 253)') {
-        body.style.backgroundColor = '#1e1e1e';
-        body.style.color = '#ddd';
-      } else {
-        body.style.backgroundColor = '#fdfdfd';
-        body.style.color = '#333';
-      }
-    }
-
-    // Generate sparkle elements
-    const sparkleContainer = document.getElementById('sparkle-container');
-    for (let i = 0; i < 100; i++) {
-      const span = document.createElement('span');
-      span.style.left = Math.random() * 100 + 'vw';
-      span.style.top = Math.random() * 100 + 'vh';
-      span.style.animationDuration = (Math.random() * 3 + 2) + 's';
-      sparkleContainer.appendChild(span);
-    }
-  </script>
-</body>
-</html>
