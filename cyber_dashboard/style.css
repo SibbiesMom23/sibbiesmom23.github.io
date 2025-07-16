@@ -123,6 +123,30 @@ footer a:hover {
   z-index: -1;
   opacity: 0.3;
 }
+<!-- Twitter Feed -->
+<div id="twitter-feed">
+  <a class="twitter-timeline" 
+     href="https://twitter.com/Saolli87" 
+     data-chrome="noheader nofooter noborders"
+     data-tweet-limit="5"
+     data-theme="dark"
+     data-link-color="#E81C4F"
+     data-lang="en">
+     Tweets by saolli87
+  </a> 
+/* === Twitter Feed Styling === */
+#twitter-feed {
+  max-width: 400px;
+  margin: 20px auto;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+</div>
+
+<!-- Twitter widget JS -->
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 @keyframes sparkle {
   0% { background-position: 0 0, 0 0, 0 0; }
